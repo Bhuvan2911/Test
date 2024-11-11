@@ -1,0 +1,70 @@
+
+// SINGLETON CLASS
+
+public class Singleton {
+      private static final Singleton instance = new Singleton();
+     
+       private Singleton(){}
+     
+
+      public static Singleton getInstance (){
+             return instance;
+}
+}
+
+// IMMUTABLE CLASS
+
+public final class employee {
+          private final String name
+          private final int age;
+
+    public Person(String name, int age){
+      this.name = name;
+      this.age = age;
+}
+
+// SQUAREROOT
+
+public class SquareRoot {
+    public static void main(String[] args) {
+        int number = 16;
+        int squareRoot = findSquareRoot(number);
+
+        System.out.println("The square root " + number + " rounded integer: " + squareRoot);
+    }
+    
+    public static int findSquareRoot(int number) {
+        if (number < 0) {
+          System.out.println("Negative numbers");
+        }  
+    
+        if (number == 0 || number == 1) {
+            return number;
+        }
+        
+        int low = 0, high = number;
+        int result = 0;
+        
+        while (low <= high) {
+            int middle = low + (high - low) / 2;
+            long midSquared = (long) middle * middle;
+            
+            if (midSquared == number) {
+                return middle; 
+            } else if (midSquared < number) {
+                low = middle + 1; 
+                result = middle;  
+            } else {
+                high = middle - 1;  
+            }
+        }
+ 
+        if ((long)(result + 1) * (result + 1) - number < number - (long)result * result) {
+            return result + 1; 
+        } else {
+            return result; 
+        }
+    }
+}
+
+ 
